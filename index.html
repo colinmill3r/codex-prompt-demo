@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Codex Prompt Demo</title>
-</head>
 <body>
-  <h1>Codex Prompt Demo</h1>
-  <button id="launch">Get a Random Prompt</button>
 
-  <script>
-    const prompts = [
-      "Build a browser game about delivering pizza in space.",
-      "Create a portfolio website for a fictional astronaut.",
-      "Make a cocktail recipe generator.",
-      "Build a music visualizer.",
-      "Create a personality quiz."
-    ];
+<h1>🎲 Codex Challenge Generator</h1>
 
-    document.getElementById("launch").onclick = () => {
-      const prompt =
-        prompts[Math.floor(Math.random() * prompts.length)];
+<button id="launch">
+  Get a Random Challenge
+</button>
 
-      window.location.href =
-        `codex://new?prompt=${encodeURIComponent(prompt)}`;
-    };
-  </script>
+<script>
+const prompts = [
+  "Create a browser game where a raccoon delivers pizza in space.",
+  "Build a website for a haunted bed and breakfast.",
+  "Create a personality quiz that recommends a cocktail.",
+  "Build a music visualizer inspired by neon city lights.",
+  "Create a retro arcade game about avoiding pigeons.",
+  "Build a portfolio website for a fictional astronaut.",
+  "Create a simple weather app with playful animations.",
+  "Build a virtual pet that lives in the browser."
+];
+
+document.getElementById("launch").addEventListener("click", () => {
+  const prompt =
+    prompts[Math.floor(Math.random() * prompts.length)];
+
+  const deeplink =
+    `codex://new?prompt=${encodeURIComponent(prompt)}`;
+
+  window.location.href = deeplink;
+});
+</script>
+
 </body>
 </html>
