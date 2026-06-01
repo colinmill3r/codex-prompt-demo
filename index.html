@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Codex Prompt Demo</title>
+</head>
+<body>
+  <h1>Codex Prompt Demo</h1>
+  <button id="launch">Get a Random Prompt</button>
+
+  <script>
+    const prompts = [
+      "Build a browser game about delivering pizza in space.",
+      "Create a portfolio website for a fictional astronaut.",
+      "Make a cocktail recipe generator.",
+      "Build a music visualizer.",
+      "Create a personality quiz."
+    ];
+
+    document.getElementById("launch").onclick = () => {
+      const prompt =
+        prompts[Math.floor(Math.random() * prompts.length)];
+
+      window.location.href =
+        `codex://new?prompt=${encodeURIComponent(prompt)}`;
+    };
+  </script>
+</body>
+</html>
